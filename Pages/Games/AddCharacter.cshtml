@@ -1,0 +1,61 @@
+@page
+@model AddCharacterModel
+
+@{
+    ViewData["Title"] = "Add Character";
+}
+
+<h1>Create</h1>
+
+<h4>Character</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Character.GameId" class="control-label"></label>
+                <select asp-for="Character.GameId" asp-items="Model.GamesDropDown" class="form-control">
+                    <option value="">--Select Game--</option> 
+                </select>
+                <span asp-validation-for="Character.GameId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Character.Name" class="control-label"></label>
+                <input asp-for="Character.Name" class="form-control" />
+                <span asp-validation-for="Character.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                <label asp-for="Character.Age" class="control-label"></label>
+                <input asp-for="Character.Age" class="form-control" />
+                <span asp-validation-for="Character.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Character.isplayable" class="control-label"></label>
+                <input asp-for="Character.isplayable" class="form-control" />
+                <span asp-validation-for="Character.isplayable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Character.Description" class="control-label"></label>
+                <input asp-for="Character.Description" class="form-control" />
+                <span asp-validation-for="Character.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Character.VoiceActor" class="control-label"></label>
+                <input asp-for="Character.VoiceActor" class="form-control" />
+                <span asp-validation-for="Character.Actor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Character" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

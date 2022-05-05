@@ -1,0 +1,75 @@
+@page
+@model ChristianGomezFinal.Pages.Games.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Game</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Game.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Game.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Game.Dev)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Game.Dev)
+        </dd>
+        @foreach (var c in Model.Game.Characters)
+        {
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => c.Name)
+            
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => c.Name)
+            
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => c.Age)
+            
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => c.Age)
+            
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => c.isplayable)
+            
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => c.isplayable)
+            
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => c.Description)
+            
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => c.Description)
+            
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => c.VoiceActor)
+            
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => c.VoiceActor)
+            
+        </dd> 
+         
+        }
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Game.GameId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
