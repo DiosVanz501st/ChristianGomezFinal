@@ -175,3 +175,4 @@ C:\Users\gomez\OneDrive\Desktop\C# Homework\ChristianGomezFinal\obj\Debug\netcor
 C:\Users\gomez\OneDrive\Desktop\C# Homework\ChristianGomezFinal\obj\Debug\netcoreapp3.1\Razor\Pages\Games\Edit.cshtml.g.cs
 C:\Users\gomez\OneDrive\Desktop\C# Homework\ChristianGomezFinal\obj\Debug\netcoreapp3.1\Razor\Pages\Games\Index.cshtml.g.cs
 C:\Users\gomez\OneDrive\Desktop\C# Homework\ChristianGomezFinal\obj\Debug\netcoreapp3.1\Razor\Pages\Games\AddCharacter.cshtml.g.cs
+C:\Users\gomez\OneDrive\Desktop\C# Homework\ChristianGomezFinal\obj\Debug\netcoreapp3.1\Razor\Pages\Characters.cshtml.g.cs

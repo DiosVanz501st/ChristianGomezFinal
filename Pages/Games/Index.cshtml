@@ -14,10 +14,24 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Game[0].Title)
+                @{
+                    var titleSort = "first_asc";
+                    if(Model.CurrentSort == "first_asc")
+                    {
+                        titleSort = "first_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@titleSort">@Html.DisplayNameFor(model => model.Game[0].Title)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Game[0].Dev)
+                 @{
+                    var devSort = "devt_asc";
+                    if(Model.CurrentSort == "dev_asc")
+                    {
+                        titleSort = "dev_desc";
+                    }
+                }
+                 <a asp-page="./Index" asp-route-CurrentSort="@devSort">@Html.DisplayNameFor(model => model.Game[0].Dev)</a>
             </th>
             <th></th>
         </tr>
@@ -40,3 +54,30 @@
 }
     </tbody>
 </table>
+<hr />
+@{
+    var prevDisabled="";
+    if (Model.PageNum <= 1)
+    {
+        prevDisabled = "disabled";
+    }
+}
+
+@{
+    var nextDisabled="";
+    if (Model.PageNum <= 4)
+    {
+        prevDisabled = "disabled";
+    }
+}
+
+
+
+
+
+<nav aria-label="Page navigation example">
+    <ul class ="pagination">
+        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a><</li>
+        <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum + 1)">Next</a><</li>
+    </ul>
+</nav>

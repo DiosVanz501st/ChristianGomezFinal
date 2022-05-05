@@ -1,0 +1,19 @@
+@page
+@model CharacterModel
+@{
+    ViewData["Title"] = "All Characters";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Characters</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@foreach (var c in Model.Characters)
+{
+  <p>Name</p>  <p>@Html.DisplayFor(ModelItem => c.Name)</p>
+   <p>Age</p> <p>@Html.DisplayFor(ModelItem => c.Age)</p>
+   <p>Playable</p> <p>@Html.DisplayFor(ModelItem => c.isplayable)</p>
+  <p>Description</p>  <p>@Html.DisplayFor(ModelItem => c.Description)</p>
+  <p>Voice Actor</p>  <p>@Html.DisplayFor(ModelItem => c.VoiceActor)</p>
+}
